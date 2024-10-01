@@ -1,0 +1,36 @@
+.element-list__list-item__container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s;
+}
+
+.element-list__list-item__text {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: #666;
+}
+
+.element-list__list-item__button {
+  margin-right: 10px;
+  background-color: #28a745;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.element-list__list-item__button:hover {
+  background-color: #218838;
+}
+
+.element-list__list-item__button_cancel {
+  background-color: #dc3545;
+}
+
+.element-list__list-item__button_cancel {
+  background-color: #c82333;
+}

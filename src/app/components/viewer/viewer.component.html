@@ -1,0 +1,57 @@
+<div>
+  <h2 class="main--title">Просмотр элементов</h2>
+
+  <table mat-table [dataSource]="items">
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Наименование</th>
+      <td mat-cell *matCellDef="let item">{{ item.title }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="creationDate">
+      <th mat-header-cell *matHeaderCellDef>Дата и время создания</th>
+      <td mat-cell *matCellDef="let item">
+        {{ item.creationDate | date : "dd-MM-yyyy HH:mm" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dueDate">
+      <th mat-header-cell *matHeaderCellDef>Дата и время выполнения</th>
+      <td mat-cell *matCellDef="let item">
+        {{ item.dueDate | date : "dd-MM-yyyy HH:mm" }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let item; let i = index">
+        <button
+          mat-button
+          type="button"
+          (click)="moveUp(i); $event.stopPropagation()"
+        >
+          Поднять
+        </button>
+        <button
+          mat-button
+          type="button"
+          (click)="moveDown(i); $event.stopPropagation()"
+        >
+          Опустить
+        </button>
+      </td>
+    </ng-container>
+
+    <tr
+      mat-header-row
+      *matHeaderRowDef="['title', 'creationDate', 'dueDate', 'actions']"
+    ></tr>
+    <tr
+      mat-row
+      (click)="openDialog(row)"
+      *matRowDef="
+        let row;
+        columns: ['title', 'creationDate', 'dueDate', 'actions']
+      "
+    ></tr>
+  </table>
+</div>

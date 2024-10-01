@@ -1,0 +1,28 @@
+<h1 class="dialog__title" mat-dialog-title>Добавить элемент</h1>
+<div class="dialog__content" mat-dialog-content>
+  <form class="dialog__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="dialog__form-field">
+      <mat-label>Название</mat-label>
+      <input matInput class="dialog__input" formControlName="title" required />
+    </mat-form-field>
+    <mat-form-field class="dialog__form-field">
+      <mat-label>Дата выполнения</mat-label>
+      <input
+        matInput
+        type="datetime"
+        class="dialog__input"
+        formControlName="dueDate"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field class="dialog__form-field">
+      <mat-label>Описание</mat-label>
+      <textarea
+        matInput
+        class="dialog__textarea"
+        formControlName="description"
+      ></textarea>
+    </mat-form-field>
+    <button class="dialog__button" mat-button type="submit">Сохранить</button>
+  </form>
+</div>

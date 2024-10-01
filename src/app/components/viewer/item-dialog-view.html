@@ -1,0 +1,37 @@
+<h1 class="dialog__title" mat-dialog-title>Добавить элемент</h1>
+<div class="dialog__content" mat-dialog-content>
+  <form class="dialog__form" [formGroup]="form">
+    <mat-form-field class="dialog__form-field">
+      <mat-label class="dialog__form-label">Название</mat-label>
+      <input
+        class="dialog__form-input"
+        matInput
+        readonly
+        formControlName="title"
+        required
+      />
+    </mat-form-field>
+    <mat-form-field class="dialog__form-field">
+      <mat-label class="dialog__form-label">Дата выполнения</mat-label>
+      <input
+        class="dialog__form-input"
+        matInput
+        readonly
+        [matDatepicker]="picker"
+        formControlName="dueDate"
+        required
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field class="dialog__form-field">
+      <mat-label class="dialog__form-label">Описание</mat-label>
+      <textarea
+        class="dialog__form-textarea"
+        matInput
+        formControlName="description"
+        readonly
+      ></textarea>
+    </mat-form-field>
+  </form>
+</div>

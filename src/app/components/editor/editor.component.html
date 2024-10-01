@@ -1,0 +1,25 @@
+<h2 class="main--title">Редактирование элементов</h2>
+<button mat-button (click)="openDialog()">Добавить элемент</button>
+<div
+  *ngFor="let item of itemService.getItems(); let i = index"
+  class="element-list__list-item__container"
+>
+  <p class="element-list__list-item__text">
+    {{ item.title }} - {{ item.creationDate | date : "dd-MM-yyyy HH:mm" }} -
+    {{ item.dueDate | date : "dd-MM-yyyy HH:mm" }}
+  </p>
+  <button
+    mat-button
+    (click)="itemService.copyItem(i)"
+    class="element-list__list-item__button"
+  >
+    Копировать
+  </button>
+  <button
+    mat-button
+    (click)="itemService.deleteItem(i)"
+    class="element-list__list-item__button_cancel"
+  >
+    Удалить
+  </button>
+</div>

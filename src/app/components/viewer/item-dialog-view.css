@@ -1,0 +1,38 @@
+.dialog {
+  max-width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dialog__title {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.dialog__content {
+  margin-bottom: 20px;
+}
+
+.dialog__form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.dialog__form-label {
+  font-weight: bold;
+}
+
+.dialog__form-input {
+  width: 100%;
+}
+
+.dialog__form-textarea {
+  width: 100%;
+  min-height: 100px;
+}
+
+.dialog__form-required {
+  color: red;
+}
